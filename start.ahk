@@ -5,6 +5,12 @@
 #include, autocorrect.ahk
 #Include, code-snippets.ahk
 
+OpenURL(u) {
+	WinActivate, Program Manager
+	Run %u%
+	return
+}
+
 ; Export word doc for current page from onenote
 ^`::
 Send !f
