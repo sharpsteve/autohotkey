@@ -1,124 +1,41 @@
-; AutoStart Autohotkey Script
-#SingleInstance force
-#NoEnv ; Avoid checking empty variables. https://autohotkey.com/docs/commands/_NoEnv.htm
+; AutoStart Autohotkey Script for code snippets
 
-#include, autocorrect.ahk
-#Include, code-snippets.ahk
-
-OpenURL(u) {
-	WinActivate, Program Manager
-	Run %u%
-	return
-}
-
-; Export word doc for current page from onenote
-^`::
-Send !f
-Sleep, 300
-Send s
-Sleep 300
-Send {Tab}
-Send {Tab} 
-Send {Down}
-Send {Tab}
-Send {Enter}
-return
-
-; Export section as word doc
-!`::
-Send !f
-Sleep, 300
-Send s
-Sleep 300
-Send {Tab}
-Send {Down}
-Send {Tab} 
-Send {Down}
-Send {Tab}
-Send {Enter}
-return
-
-; Press Windows Key + C 
-#C::OpenURL(clipboard)
-+MButton::
-clipboard = ; Empty clipboard
-Send, ^c
-ClipWait, 2
-OpenURL(clipboard)
-return
-
-; Dates
-:R*?:!dd::
+;; Header
+::hhead::
 FormatTime, CurrentDateTime,, MM/dd/yy
-SendInput %CurrentDateTime%
-return
-:R*?:!xx::
-FormatTime, CurrentDateTime,, yyMMddHHmmss
-SendInput %CurrentDateTime%
-return
-:R*?:!aa::
-FormatTime, CurrentDateTime,, yyMMdd
-SendInput %CurrentDateTime%
-return
-:R*?:!jd::
-FormatTime, CurrentDateTime,, MM-dd-yy
-SendInput %CurrentDateTime%
-return
-:R*?:!yy::
-FormatTime, CurrentDateTime,, MM-dd-yy HH:mm
-SendInput %CurrentDateTime%
+message = Purpose:`t`t`nAuthor:`t`tStephen Sharp`nDate:`t`t%CurrentDateTime%`nNotes:`n
+SendInput %message%
 return
 
-; Append date as -MM-DD-YY
-:*:mmdy::
-FormatTime, CurrentDateTime,, -MM-dd-yy
-SendInput %CurrentDateTime%
+;; Note line
+::nnote::
+FormatTime, CurrentDateTime,, MM/dd/yy
+message = %CurrentDateTime%{space}{space}SJS{space}{space}
+SendInput %message%
 return
 
-; Append date as -YYYY-MM-DD
-:*:yymd::
-FormatTime, CurrentDateTime,, -yyyy-MM-dd
-SendInput %CurrentDateTime%
+; Rhapsody mapper
+:*:!mtr::trace("***** ");{left 3}
+
+
+;; JSDoc header
+::jsh::
+message = 
+(
+/**
+ * [descrip]
+ * @param  {[type]} arg1 [description]
+ * @return {[type]}      [description]
+ */
+)
+SendInput %message%
 return
 
-; General Abbreviations
-::aahk::autohotkey
-
-; Reload script with Control Alt R
-; ^!r::Reload  ; Assign Ctrl-Alt-R as a hotkey to restart the script.
-
-; Window Commands
-Break::WinMinimize, A ; Minimize active window
-^CtrlBreak::WinMinimize, A ; Minimize active window
-;PrintScreen::WinMinimize, A ; Minimize active window
-
-;  Days of the week
-:*:!mon::Monday
-:*:!tue::Tuesday
-:*:!wed::Wednesday
-:*:!thu::Thursday
-:*:!fri::Friday
-:*:!sat::Saturday
-:*:!sun::Sunday 
-
-; Months of the year
-:*:!ja::January
-:*:!fe::February
-:*:!ma::March
-:*:!ap::April
-:*:!my::May
-:*:!ju::June
-:*:!jl::July
-:*:!au::August
-:*:!se::September
-:*:!oc::October
-:*:!no::November
-:*:!de::December
-
-; DDG (Duck duck go)
-::!gy::!gyear
-::!sy::!syear
-
-; Capitalization
-::todoist::Todoist
-::google::Google
+;; JSDoc param
+::jsp::
+message =  
+(
+    * @param  {[type]} arg1 [description]
+)
+SendInput %message%
+return
