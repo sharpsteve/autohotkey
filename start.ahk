@@ -123,13 +123,7 @@ Break::WinMinimize, A ; Minimize active window
 ::!gy::!gyear
 ::!sy::!syear
 
-; Capitalization
-::todoist::Todoist
-::google::Google
-
-
 ; Markdown
-
 ; Code Block
 :*:mdco::
 codeString = ``````
