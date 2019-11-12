@@ -166,3 +166,7 @@ return
 send ******
 send {left 3}
 return
+
+; Text Emojji
+:*:!puzzem::¯\_(ツ)_/¯
+:*:!hiem::\ (•◡•) /
