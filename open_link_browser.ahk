@@ -4,7 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode, 2
 
-# https://autohotkey.com/board/topic/112386-script-to-open-links-from-chrome-apps-in-firefox-instead-of-chrome/
+; https://autohotkey.com/board/topic/112386-script-to-open-links-from-chrome-apps-in-firefox-instead-of-chrome/
 
 #IfWinActive Asana  ; If using normal Chrome Browser, Replace "Asana" with "Google Chrome". If another Chrome Application shortcut, replace with name of that app
 ~RButton::
