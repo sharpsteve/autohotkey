@@ -2,8 +2,8 @@
 #SingleInstance force
 #NoEnv ; Avoid checking empty variables. https://autohotkey.com/docs/commands/_NoEnv.htm
 
-#include, autocorrect.ahk
-#Include, code-snippets.ahk
+; #include, autocorrect.ahk
+; #Include, code-snippets.ahk
 
 OpenURL(u) {
 	WinActivate, Program Manager
