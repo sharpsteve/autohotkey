@@ -1,13 +1,17 @@
-; AutoStart Autohotkey Script for code snippets
+; AutoStart Autohotkey Script
 
-;; File Header
+;
+; 2-code-snippets.ahk
+;
+
+;; Header
 ::hhead::
 FormatTime, CurrentDateTime,, MM/dd/yy
-message = Purpose:{tab}{Enter}Author:{tab}{tab}Stephen Sharp{Enter}Date:{tab}{tab}%CurrentDateTime%{Enter}Notes:{Enter}
+message = Purpose:`t`t`nAuthor:`t`tStephen Sharp`nDate:`t`t%CurrentDateTime%`nNotes:`n
 SendInput %message%
 return
 
-;; File Header Note line
+;; Note line
 ::nnote::
 FormatTime, CurrentDateTime,, MM/dd/yy
 message = %CurrentDateTime%{space}{space}SJS{space}{space}
@@ -16,6 +20,7 @@ return
 
 ; Rhapsody mapper
 :*:!mtr::trace("***** ");{left 3}
+
 
 ;; JSDoc header
 ::jsh::
