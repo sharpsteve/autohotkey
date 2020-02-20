@@ -1,0 +1,4 @@
+# Sublime project files should be in git, not workspace files
+*.sublime-workspace
+q
+/master.ahk
