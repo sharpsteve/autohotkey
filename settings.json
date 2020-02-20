@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": "provider_revenue",
+            "dialect": "MSSQL",
+            "name": "provider_revenue",
+            "port": 1433,
+            "server": "csapp01",
+            "username": "sharps"
+        }
+    ]
+}
