@@ -4,11 +4,18 @@
 ; 2-code-snippets.ahk
 ;
 
-;; Header
+;; Headers
 ::hhead::
 FormatTime, CurrentDateTime,, MM/dd/yy
-message = Purpose:`t`t`nAuthor:`t`tStephen Sharp`nDate:`t`t%CurrentDateTime%`nNotes:`n
+message = 
+(
+Purpose:    .
+Author:     Stephen Sharp
+Date:       %CurrentDateTime%
+Notes:      .
+)
 SendInput %message%
+SendInput {left 1}{up 3}
 return
 
 ;; Note line
