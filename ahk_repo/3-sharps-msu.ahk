@@ -5,8 +5,9 @@
 ;
 
 #SingleInstance force
-#NoEnv ; Avoid checking empty variables. https://autohotkey.com/docs/commands/_NoEnv.htm
+#NoEnv 
 
+; Avoid checking empty variables. https://autohotkey.com/docs/commands/_NoEnv.htm
 ::mmsu::MSU
 ::mmsu::Michigan State University{Space
 ::mmtel::517-884-2182{Space
@@ -36,4 +37,6 @@ Notes:
 ::!mso::Michigan
 ; zip Only
 ::!mzo::48824
+
+::pbi::Power Bi
 
